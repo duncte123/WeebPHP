@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dunca
- * Date: 06-May-18
- * Time: 19:16
- */
 
 namespace WeebPHP\types;
 
