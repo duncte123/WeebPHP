@@ -23,9 +23,9 @@
  * SOFTWARE.
  */
 
-namespace WeebPHP\types;
+namespace duncte123\WeebPHP\types;
 
-use WeebPHP\objects\DefaultEnum;
+use duncte123\WeebPHP\objects\DefaultEnum;
 
 class TokenType extends DefaultEnum {
 

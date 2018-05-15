@@ -23,10 +23,12 @@
  * SOFTWARE.
  */
 
-namespace WeebPHP\types;
+namespace duncte123\WeebPHP\types;
 
 
-class Environment extends \SplEnum{
+use duncte123\WeebPHP\objects\DefaultEnum;
+
+class Environment extends DefaultEnum {
 
     public const __default = self::PRODUCTION;
 

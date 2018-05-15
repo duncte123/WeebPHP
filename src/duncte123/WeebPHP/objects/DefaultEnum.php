@@ -23,7 +23,7 @@
  * SOFTWARE.
  */
 
-namespace WeebPHP\objects;
+namespace duncte123\WeebPHP\objects;
 
 abstract class DefaultEnum {
     final public function __construct($value) {

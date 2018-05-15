@@ -1,5 +1,30 @@
 {
-    "require": {
-        "guzzlehttp/guzzle": "~6.0"
+  "name": "duncte123/WeebPhp",
+  "description": "A php wrapper for the Weeb.sh api",
+  "keywords": [
+    "php",
+    "weeb",
+    "weebsh",
+    "weeb.sh"
+  ],
+  "homepage": "https://github.com/duncte123/WeebPHP",
+  "time": "2015-06-06",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "duncte123",
+      "email": "contact@duncte123.me",
+      "homepage": "https://github.com/duncte123",
+      "role": "Author"
     }
+  ],
+  "autoload": {
+    "psr-0": {
+      "duncte123\\WeebPHP": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.1.0",
+    "guzzlehttp/guzzle": "~6.0"
+  }
 }

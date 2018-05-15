@@ -23,25 +23,48 @@
  * SOFTWARE.
  */
 
-namespace WeebPHP;
+namespace duncte123\WeebPHP;
 
-
-use WeebPHP\types\Environment;
-use WeebPHP\types\TokenType;
+use duncte123\WeebPHP\types\Environment;
+use duncte123\WeebPHP\types\TokenType;
 
 class WeebPHPBuilder {
 
-    private $tokenType;
+    private $tokenType = TokenType::__default;
+    private $botInfo;
+    private $environment = Environment::__default;
+    private $token;
 
-    public function __construct(TokenType $tokenType) {
+    public function __construct(String $tokenType) {
         $this->tokenType = $tokenType;
     }
 
-    public function setEnvironment(Environment $environment) {
-
+    public function setEnvironment(String $environment) {
+        $this->environment = $environment;
+        return $this;
     }
-    public function setBotInfo(String $botName, String $version, String $extra = null) {
 
+    public function setBotInfo(String $botName, String $version, String $extra = null) {
+        $this->botInfo = $botName . '/' . $version;
+        if(!is_null($extra))
+            $this->botInfo .= '/' . $extra;
+        return $this;
+    }
+
+    public function setToken(String $token) {
+        $this->token = $token;
+        return $this;
+    }
+
+    public function build() {
+        if($this->token == null)
+            throw new \InvalidArgumentException("Token must be set first via setToken");
+        return new WeebPHPImpl(
+            $this->environment,
+            $this->token,
+            $this->tokenType,
+            $this->botInfo
+        );
     }
 
 }

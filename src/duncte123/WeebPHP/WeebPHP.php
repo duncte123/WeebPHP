@@ -23,15 +23,18 @@
  * SOFTWARE.
  */
 
-namespace WeebPHP;
+namespace duncte123\WeebPHP;
 
-use WeebPHP\types\Environment;
 
-interface WeebPHP {
+abstract class WeebPHP {
 
-    public function getEnvironment();
-    public function getToken();
-    public function getTokenType();
+    public abstract function getEnvironment();
+    public abstract function getToken();
+    public abstract function getTokenType();
+
+    public function getCompiledToken() {
+        return $this->getTokenType() . ' ' . $this->getToken();
+    }
 
 
 }
