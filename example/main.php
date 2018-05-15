@@ -23,6 +23,17 @@
  * SOFTWARE.
  */
 
-require '../src/types/TokenType.php';
+require(__DIR__ . "/../vendor/autoload.php");
 
-echo \WeebPHP\types\TokenType::WOLKE;
+use duncte123\WeebPHP\types\Environment;
+use duncte123\WeebPHP\types\TokenType;
+use duncte123\WeebPHP\WeebPHPBuilder;
+
+
+$api  = (new WeebPHPBuilder(TokenType::BEARER))
+    ->setBotInfo("DuncteBot", "3.0")
+    ->setToken("aaaaa")
+    ->setEnvironment(Environment::PRODUCTION)
+    ->build();
+
+echo $api->getCompiledToken();
